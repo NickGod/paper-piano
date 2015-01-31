@@ -1,0 +1,50 @@
+@charset "utf-8";
+/* CSS Document */
+
+html, body {
+	height: 100%;
+	margin: 0;
+}
+
+div {
+	height: 100%;
+	background-color: red;	
+	float: left;
+}
+
+#left {
+	width: 220px;
+	margin: 5px;
+	float: left;
+}
+
+#center {
+	margin: 5px 0;
+	width: calc(100% - 460px);	
+	float: left;
+	text-align: center;
+}
+
+.center_body
+{
+	margin: 5px 0;
+	width: calc(100% - 460px);	
+	float: left;
+	text-align: left;	
+}
+
+#right{
+	margin: 5px;
+	width: 220px;
+	float: left;
+	text-align: center;
+}
+
+#heading{
+	font-size: 35px;
+	text-decoration: underline;
+}
+
+#text{
+	font-size: 25px;	
+}
