@@ -14,6 +14,7 @@ io.on('connection', function(socket){
   socket.on('code received', function(data){
   	//send data to all listening clients.
   	console.log("File received. Send it to all clients.")
+  	console.log(data);
     io.emit('code received', data);
   });
 });

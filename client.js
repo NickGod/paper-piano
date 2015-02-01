@@ -1,12 +1,12 @@
 //client app to send command file to the server
-
+  var fs = require('fs');
   var socket = require('socket.io-client')('https://paperpiano.herokuapp.com/');
   socket.on('connect', function(){
   	console.log("Client connected.");
   	console.log("Prepared to send the file.");
 
   	//first read the file
-	 var fs = require('fs');
+	 
 	fs.readFile('./test.txt', 'utf8', function (err,data) {
 	  if (err) {
 	    return console.log(err);
@@ -22,5 +22,13 @@
   //this should read the command
   socket.on('code received', function(data){
   	console.log(data);
+  	//write it to a file
+  	var wstream = fs.createWriteStream('temp.txt');
+  	fs.write('temp.txt', wstream, 'utf8', function (err,data) {
+  		if (err) {
+  			return console.log(err);
+  		}
+  		console.log('Successful write!');
+  	})
   });
   socket.on('disconnect', function(){});
