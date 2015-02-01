@@ -24,11 +24,7 @@
   	console.log(data);
   	//write it to a file
   	var wstream = fs.createWriteStream('temp.txt');
-  	fs.write('temp.txt', wstream, 'utf8', function (err,data) {
-  		if (err) {
-  			return console.log(err);
-  		}
-  		console.log('Successful write!');
-  	})
+  	wstream.write(data);
+  	wstream.end(function () {console.log('writing done!');});
   });
   socket.on('disconnect', function(){});
