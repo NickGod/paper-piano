@@ -7,9 +7,9 @@ html, body {
 }
 
 div {
-	height: 100%;
-	background-color: red;	
+	height: 1000px;	
 	float: left;
+	border: solid;
 }
 
 #left {
